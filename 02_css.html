@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>这是我在学习css的语法的网页</title>
+    <style>
+        /* 这里是id选择器，这里的代码就是在告诉浏览器应该把html标签修饰成什么样子，所有的代码都写到style标签里面 */
+        /* 不管用什么选择器，最终的目的都是为了找到对应的元素，最终用{}里面的规则去修饰 */
+        /* id 类 标签 选择器的不同点 */
+        /* id 表示唯一，网页中只有这一个元素需要修饰的话 用id选择器，不会出现多次 */
+        /* 类选择器：修饰同一元素，有多个元素具有同样的样式的时候，可以用类选择器，可以出现多次 */
+        /* 标签选择器：可以选中所有同名的标签 */
+
+
+        #box{
+        
+            color:blue;
+        } 
+
+        /* 这是类选择器 */
+        .box2{
+            color: green;
+
+        }
+
+        /* 这是标签选择器，可以批量改样式，比较方便*/
+        p{
+            color: hotpink;
+        }
+
+        #pro{
+            width: 100px;
+            height: 100px;
+            background-color: cadetblue;
+        }
+
+    </style>
+    <!-- 这是关联的第3种这种方式通过link来操作，的好处是让html的代码和css代码分离，方便维护，常用未成功 -->
+    <!-- <link href="test/index.css"/> -->
+
+</head>
+<body>
+    <!-- <div style="color: red;">这是第一种关联的方法</div> -->
+    <!-- <div id="ret2">这是第二种关联的方法，通过各种样式比如：id=#号选择器来关联</div> -->
+    <div id="box">这是第一个id选择器box</div>
+    <div class="box2">这事第二个类选择器box</div>
+    <div id="pro"></div>
+    <p>这是第三个标签选择器</p>
+    <p>这是第三个标签选择器</p>
+    <p>这是第三个标签选择器</p>
+
+</body>
+</html>
