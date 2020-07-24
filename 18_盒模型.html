@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            /* 将所有的元素的边距设置位0*/
+        }
+        
+        .itme {
+            /*设置图片之间的边距*/
+            margin: 20px;
+            /* 设置元素浮动，左对齐 */
+            float: left;
+            /* 边框 虚线 黑色 */
+            border: 2px solid black;
+            /* 给元素增加填充 */
+            padding: 15px;
+        }
+        
+        #box {
+            width: 870px;
+            overflow: auto;
+            /* 让父元素自动设置边距，左右边距相等，即可达到居中效果，水平方向有效 */
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <div class="itme">
+            <img src="img/01.png"><br> 测试文字内容
+        </div>
+        <div class="itme">
+            <img src="img/02.png"><br> 测试文字内容
+        </div>
+        <div class="itme">
+            <img src="img/03.png"><br> 测试文字内容
+        </div>
+    </div>
+
+
+</body>
+
+</html>
