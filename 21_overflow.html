@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        section {
+            width: 750px;
+            margin: 300px auto;
+        }
+        
+        section article {
+            float: left;
+            width: 200px;
+            height: 300px;
+            overflow: hidden;
+            border-radius: 4px;
+        }
+        
+        #text-a {
+            background-color: #373334;
+            color: white;
+        }
+        
+        #text-b {
+            background-color: #c8d7d2;
+        }
+        
+        #text-c {
+            background-color: #f3f2f0;
+        }
+        
+        h1 {
+            margin: 10px 10px 5px 50px;
+        }
+        
+        p {
+            margin: 12px 50px;
+        }
+        
+        section:hover article {
+            width: 50px;
+        }
+        /* 上面是子元素被hover时，父元素也同样被Honver了，这个时候我我们设置父元素的宽度为50px,将被honver的元素宽度设置为650px */
+        
+        section article:hover {
+            width: 650px;
+            overflow: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- overflow:hidden  意思是超出边框部分可以隐藏 -->
+    <!-- overflow:auto  意思是超出部分就会出现滚动条 -->
+    <section>
+        <article id="text-a">
+            <h1>金刚经</h1>
+            <p>
+                上下相连的两个盒子之间的空白，需要相互抵消时。如15px + 20px的margin，将得到20px的空白。(margin折叠）。需要使用负值对页面布局时(margin值可以取负，padding不行)。 使用padding时的情况：需要在border内测添加空白时。空白处需要背景（色）时。上下相连的两个盒子之间的空白，希望等于两者之和时。如15px + 20px的padding，将得到35px的空白。 margin是用来隔开元素与元素的间距；padding是用来隔开元素与内容的间隔。margin用于布局分开元素使元素与元素互不相干；padding用于元素与内容之间的间隔，让内容（文字）与（包裹）元素之间有一段“呼吸距离”。
+            </p>
+        </article>
+        <article id="text-b">
+            <h1>金刚经</h1>
+            <p>
+                上下相连的两个盒子之间的空白，需要相互抵消时。如15px + 20px的margin，将得到20px的空白。(margin折叠）。需要使用负值对页面布局时(margin值可以取负，padding不行)。 使用padding时的情况：需要在border内测添加空白时。空白处需要背景（色）时。上下相连的两个盒子之间的空白，希望等于两者之和时。如15px + 20px的padding，将得到35px的空白。 margin是用来隔开元素与元素的间距；padding是用来隔开元素与内容的间隔。margin用于布局分开元素使元素与元素互不相干；padding用于元素与内容之间的间隔，让内容（文字）与（包裹）元素之间有一段“呼吸距离”。
+            </p>
+        </article>
+        <article id="text-c">
+            <h1>金刚经</h1>
+            <p>
+                上下相连的两个盒子之间的空白，需要相互抵消时。如15px + 20px的margin，将得到20px的空白。(margin折叠）。需要使用负值对页面布局时(margin值可以取负，padding不行)。 使用padding时的情况：需要在border内测添加空白时。空白处需要背景（色）时。上下相连的两个盒子之间的空白，希望等于两者之和时。如15px + 20px的padding，将得到35px的空白。 margin是用来隔开元素与元素的间距；padding是用来隔开元素与内容的间隔。margin用于布局分开元素使元素与元素互不相干；padding用于元素与内容之间的间隔，让内容（文字）与（包裹）元素之间有一段“呼吸距离”。
+            </p>
+        </article>
+    </section>
+</body>
+
+</html>

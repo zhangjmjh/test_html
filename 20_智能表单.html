@@ -15,9 +15,9 @@
             width: 350px;
             background-color: #9cbc2b;
             /* 增加上下边距，其他3个方向居中 */
-            margin: 100px auto;
+            margin: 20px auto;
             /* 增加外边框 */
-            padding: 15px 15px;
+            padding: 10px 15px;
             color: #364411;
             /* 给表单加上圆角 */
             border-radius: 10px;
@@ -26,7 +26,7 @@
         .step {
             font-size: 14px;
             font-weight: bold;
-            margin: 10px auto;
+            margin: 10px 0;
         }
         
         .form-line {
@@ -35,11 +35,52 @@
             border-width: 2px;
             border-style: solid;
             padding: 3px;
-            margin: 10px 0;
+            margin: 3px 0;
             background-color: #cede95;
             font-size: 12px;
             /* 浮动元素左边距增加10px */
             padding-left: 10px;
+        }
+        
+        .form-line span {
+            display: inline-block;
+            width: 110px;
+        }
+        
+        .form-line input {
+            background: white;
+            border: none;
+            height: 20px;
+            border-radius: 3px;
+            width: 180px;
+        }
+        
+        .form-line input[type=radio] {
+            width: 25px;
+            height: 12px;
+        }
+        
+        .form-line textarea {
+            width: 180px;
+            height: 70px;
+            vertical-align: top;
+            border: none;
+            border-radius: 3px;
+            /* 固定右下角的那个拖动的大小大小，使之不能随意拖动他 */
+            resize: none;
+        }
+        
+        input.submit-btn {
+            border: none;
+            background-color: #374313;
+            color: white;
+            display: block;
+            width: 100px;
+            padding: 5px 0;
+            border-radius: 20px;
+            margin: 10px auto;
+            /* 鼠标放到提交按钮上的时候出现一个小手的图标 */
+            cursor: pointer;
         }
     </style>
 </head>
@@ -70,7 +111,7 @@
             </p>
             <p class="form-line">
                 <span>邮编</span>
-                <input type="url">
+                <input type="text">
             </p>
         </section>
 
