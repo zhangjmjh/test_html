@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+            border: none;
+            list-style: none;
+        }
+        
+        img {
+            /* 调整图片高度，并设置图片调整垂直对齐方式 */
+            height: 80px;
+            vertical-align: middle;
+        }
+        
+        ul {
+            /* 处理url，添加总宽度，居中，添加圆角*/
+            width: 600px;
+            margin: 50px auto;
+            border-radius: 4px;
+            /* 加这个是为了显示出圆角，因为虽然给ul设置了圆角，但是蓝色的背景图是加给ul,所以这里加了一个隐藏属性，就可以了 */
+            overflow: hidden;
+        }
+        
+        ul li {
+            /* 设置每个li的高度、行高 */
+            height: 90px;
+            line-height: 90px;
+        }
+        
+        ul li:first-child {
+            /* first-child表示选中li标签中的第一个li */
+            height: 40px;
+            background: #22a4ff;
+            line-height: 40px;
+            font-weight: bold;
+        }
+        
+        ul li:nth-of-type(even) {
+            /* 表示偶数行全部置灰 even表示偶数行的意思 */
+            /* xxx:nth-of-type(odd) 选择序号（同类型）为奇数的xxx元素 */
+            background-color: #eee;
+        }
+        
+        ul li div {
+            /* 为了让div标签中的一些展示文字横向排列做了左浮动 */
+            float: left;
+            text-align: center;
+        }
+        
+        ul li div:nth-child(1) {
+            /* 选中序号（自然排序）为n的xxx元素 */
+            width: 120px;
+        }
+        
+        ul li div:nth-child(2) {
+            width: 250px;
+        }
+        
+        ul li div:nth-child(3) {
+            width: 100px;
+        }
+        
+        ul li div:nth-child(4) {
+            width: 130px;
+        }
+        
+        ul li span {
+            /* 给列表加上小星星，span使用inline-block之后猜可以设定大小、设定图片位置*/
+            display: inline-block;
+            width: 18px;
+            height: 18px;
+            background: url(img/star.png);
+            background-position-y: -175px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <ul>
+            <li>
+                <div>海报</div>
+                <div>IMDB电影排行</div>
+                <div>评分</div>
+                <div>年份</div>
+            </li>
+            <li>
+                <div><img src="img/01.png"></div>
+                <div>NO.1《肖生客的救赎》</div>
+                <div><span></span>9.2</div>
+                <div>1994</div>
+            </li>
+            <li>
+                <div><img src="img/01.png"></div>
+                <div>NO.2 《教父》</div>
+                <div><span></span>9.1</div>
+                <div>1972</div>
+            </li>
+            <li>
+                <div><img src="img/01.png"></div>
+                <div>NO.3 《教父2》</div>
+                <div><span></span>9.1</div>
+                <div>1972</div>
+            </li>
+            <li>
+                <div><img src="img/01.png"></div>
+                <div>NO.4 《黑暗骑士》</div>
+                <div><span></span>9.1</div>
+                <div>1972</div>
+            </li>
+            <li>
+                <div><img src="img/01.png"></div>
+                <div>NO.5 《十二怒汉》</div>
+                <div><span></span>9.1</div>
+                <div>1960</div>
+            </li>
+            <li>
+                <div><img src="img/01.png"></div>
+                <div>NO.6 《魔兽世界》</div>
+                <div><span></span>9.1</div>
+                <div>1960</div>
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>

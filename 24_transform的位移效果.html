@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .box {
+            float: left;
+            /* 定位模式，relative:相对定位，相对于其原文档的位置进行定位  absolute:绝对定位，相对于其上一个已经丁文的父元素进行定位
+            fixed：固定定位，相对于浏览器窗口进行定位  static:自动定位（默认定位方式）
+            下面是先定义绝对定位，然后指定宽和高，是相对于他原来的位置偏移，不会脱离文档流*/
+            position: relative;
+            width: 300px;
+            height: 300px;
+            /* 设置外边距的上下、左右距离 */
+            margin: 100px 200px;
+            /* 超出边框部分隐藏 */
+            overflow: hidden;
+        }
+        
+        .box>img {
+            width: 300px;
+            height: 300px;
+        }
+        
+        .box * {
+            transition: 1s;
+            position: absolute;
+            left: 0px;
+            top: 0px;
+        }
+        
+        .box h2 {
+            /* 设置标题的位置 */
+            color: white;
+            width: 200px;
+            /* 位移：表示在X轴偏移了100px  在Y轴偏移了250px */
+            transform: translateX(100px) translateY(250px);
+        }
+        
+        .box p {
+            color: white
+        }
+        
+        .box p:nth-of-type(1) {
+            /* 设置三个p标签的初始位移,有X y z 三个方向的值，translate位移时，默认原点是元素的中心位置*/
+            transform: translateY(140px) translateX(-150px);
+        }
+        
+        .box p:nth-of-type(2) {
+            transform: translateY(180px) translateX(-110px);
+            /* teansion:width 1s ease-in 2s  表示过渡，要过渡的属性，过渡的时间，过渡的方式，延迟时间*/
+            transition: 1s 0.1s;
+        }
+        
+        .box p:nth-of-type(3) {
+            transform: translateY(220px) translateX(-100px);
+            /* teansion:width 1s ease-in 2s  表示过渡，要过渡的属性，过渡的时间，过渡的方式，延迟时间*/
+            transition: 1s 0.1s;
+        }
+        
+        .box:hover p:nth-of-type(1) {
+            /* 添加元素的hover效果*/
+            transform: translateY(140px) translateX(10px);
+        }
+        
+        .box:hover p:nth-of-type(2) {
+            transform: translateY(180px) translateX(10px);
+        }
+        
+        .box:hover p:nth-of-type(3) {
+            transform: translateY(220px) translateX(10px);
+        }
+        
+        .box:hover img {
+            /* transform:scale(1.5) scale 表示比例1.5就表示放大1.5倍 */
+            /* transform:rotateX/rotateY/rotateZ  rotate表示旋转  transform:rotateX(30deg); 表示沿着x轴顺时针旋转30度 */
+            transform: scale(1.3) rotateZ(-15deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <img src="img/8.png">
+        <h2>Taylor Swift</h2>
+        <p class="p1">Birthdat:1989.12.13</p>
+        <p class="p2">Height:180cm</p>
+        <p class="p3">Weight:56kg</p>
+    </div>
+</body>
+
+</html>

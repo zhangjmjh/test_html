@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        
+        input[type="checkbox"] {
+            /* 这是谷歌浏览器的默认样式，IE浏览器是不支持的，设置了这个之后就可以设置其余的属性 */
+            -webkit-appearance: none;
+            margin: 50px;
+            border: 10px solid #c1c1c1;
+            border-radius: 50px;
+            width: 170px;
+            height: 70px;
+            background: #888;
+            position: relative;
+            /* 添加阴影的效果水平位置和垂直位置文0，模糊程度为10px，扩大范围是1px*,影子颜色，阴影方向是向内*/
+            box-shadow: 0 0 10px 1px #3f3f3f inset;
+            /* teansion:width 1s ease-in 2s  表示过渡，要过渡的属性，过渡的时间，过渡的方式，延迟时间*/
+            transition: 0.6s;
+        }
+        
+        input[type='checkbox']:checked {
+            background: #6fb500/* 单独拿取选中状态的checkbox，单独设定颜色，这也是一个伪类选择器 */
+        }
+        
+        input[type='checkbox']::after {
+            /* 在页面生成一个伪元素选择器 */
+            content: "";
+            display: block;
+            width: 60px;
+            height: 60px;
+            position: absolute;
+            left: -5px;
+            top: -5px;
+            border-radius: 30px;
+            /* linear-gradient  表示线性渐变 通过这个方法，可以把背景颜色，改为线性渐变 buttom表示由下而上*/
+            background: linear-gradient(to bottom, #d3d3d3, #9e9e9e);
+            box-shadow: 0px 2px 2px 0px #eee inset, 2px 1px 2px 0px #333;
+            /* teansion:width 1s ease-in 2s  表示过渡，要过渡的属性，过渡的时间，过渡的方式，延迟时间*/
+            transition: 0.6s;
+        }
+        
+        input[type='checkbox']:checked::after {
+            left: 95px;
+            /* 这里因为滑动按钮要跑到最右边去，所以这里要再单独用一下这个伪类选择器 */
+        }
+    </style>
+</head>
+
+<body>
+    <input type="checkbox">
+</body>
+
+</html>
