@@ -13,7 +13,7 @@
         
         .box {
             float: left;
-            /* 定位模式，relative:相对定位，相对于其原文档的位置进行定位  absolute:绝对定位，相对于其上一个已经丁文的父元素进行定位
+            /* 定位模式，relative:相对定位，相对于其原文档的位置进行定位  absolute:绝对定位，相对于其上一个已经存在的父元素进行定位
             fixed：固定定位，相对于浏览器窗口进行定位  static:自动定位（默认定位方式）
             下面是先定义绝对定位，然后指定宽和高，是相对于他原来的位置偏移，不会脱离文档流*/
             position: relative;
@@ -42,6 +42,8 @@
             color: white;
             width: 200px;
             /* 位移：表示在X轴偏移了100px  在Y轴偏移了250px */
+            /* transform:perspective(1000px)rotateX(45deg) transform表示透视的意思，表示沿着X轴旋转45度
+            perspective  表示观察距离的意思，设置旋转的透视距离，必须写在前面 */
             transform: translateX(100px) translateY(250px);
         }
         
