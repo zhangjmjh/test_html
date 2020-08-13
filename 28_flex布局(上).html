@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    div {
+        display: flex;
+    }
+    
+    .box {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+    
+    .box2 {
+        flex-direction: column;
+        justify-content: space-between;
+    }
+</style>
+
+<body>
+    <!-- display:flex  设定弹性容器 -->
+    <!-- flex-direction:row/colum   主轴水平/主轴垂直 -->
+    <!-- justify-content:flex-start/flex-end/center/space-between/space-around;  -->
+    <!-- 开始对齐/尾部对齐/中心对齐/两端对齐/自动分配间隔 -->
+    <!-- flex-wrap:nowrap/wrap/wrap-reverse;   内部元素换行的方式 -->
+    <!-- align-items:stretch/center/flex-start/flex-end/baseline  交叉轴的对齐方式 -->
+    <div class="box">
+        <div class="box1">
+            <span>31</span>
+            <span>八月</span>
+        </div>
+        <div class="box2">
+            <span>社群大事件</span>
+            <span>今天群主竟然拒绝了穿女装的要求，，，，，，，</span>
+        </div>
+    </div>
+</body>
+
+</html>
