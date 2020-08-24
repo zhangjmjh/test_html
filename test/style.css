@@ -120,4 +120,61 @@ p.search-history span:nth-child(1) {
     margin: 0 1.1rem 2.8rem;
 }
 
-.favirate
+.favirate {
+    margin-top: 10rem;
+    height: 9rem;
+    text-align: center;
+    background-color: white;
+    position: relative;
+    font-size: 3.2rem;
+    color: #f07a1a;
+}
+
+.favirate::after {
+    /* 利用伪元素划出底边线 */
+    content: "";
+    display: block;
+    width: 70rem;
+    height: 0.1rem;
+    background-color: #bbb;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.favirate-items {
+    background-color: white;
+    padding-bottom: 7.5rem;
+}
+
+.favirate-items p {
+    padding: 3rem 0 0;
+    display: flex;
+    justify-content: center;
+}
+
+.favirate-items p span {
+    padding: 0.8rem 1.3rem;
+    border: 1px solid#aaa;
+    border-radius: 5rem;
+    font-size: 2.4rem;
+    margin: 0 0.8rem;
+    color: #666;
+}
+
+.confirm {
+    background-color: white;
+    padding-bottom: 3rem;
+    margin-bottom: 18rem;
+    text-align: center;
+}
+
+.confirm .confirm-button {
+    width: 20rem;
+    height: 8rem;
+    border-radius: 2rem;
+    background-color: #ef9a49;
+    color: white;
+    font-size: 2.8rem;
+}
