@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        // 与 
+        // 表达式1 && 表达式2   两个都为真，结果才是true 短路操作（当第一个表达式为false时，直接不比比较第二个表达式，结果就是false）
+        // 或
+        // 表达式1 || 表达式2   两个都为假，结果才是假 短路操作(当表达式1为true时，表达式2就不去执行了，判断整个表达式为true)
+        // 非
+        // ! 表达式
+        // alert(5 < 3 && alert(a));  //false
+        // alert(5 > 3 || alert(a));  // true
+
+
+        //  逻辑非运算遵从以下规律
+        // 1、如果操作数是一个空字符串，返回true
+        // 2、操作数是非空字符串，返回false
+        // 3、操作数是0，返回true
+        // 4、操作数是任意非0的数值，包括（Infinity）,返回false
+        // 5、操作数是NaN,返回true
+        // alert(!""); true
+        // alert(!"ss"); false
+        // alert(!0); true
+        // alert(!Infinity);  false
+        // alert(!NaN);  true
+        // alert(!undefind);  true
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
