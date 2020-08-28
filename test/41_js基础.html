@@ -6,13 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script type="text/javascript">
-        var i = 1; //用与累加的数
+        //while循环中必须会有以下几点：循环初值+循环条件+循环体+循环变量增量
+        // 1、先判断表达式，表达式成立执行循环语句；
+        // 2、循环条件中使用的变量（循环变量）需要经过初始化；
+        // 3、循环体中，应有结束循环的条件，否则会造成死循环
+        // 4、循环体中，可以写若干合法的js代码，包括if，也可以再套个循环
+
+        var i = 1; //用与累加的数    循环初值
         var sum = 0;
-        while (i <= 100) {
-            sum += i;
-            // i++; //先取值，然后再进行+1操作
+        while (i <= 100) { //循环条件
+            sum += i; //循环体
+            i++; //先取值，然后再进行+1操作      循环变量增量
         }
-        alert(sum);
+        alert(sum); //5050
     </script>
 </head>
 
