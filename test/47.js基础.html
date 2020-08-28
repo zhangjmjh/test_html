@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        // arguments:在每一个函数内，都有一个内置的数组，是一个变量，叫做arguments,可以存贮当前函数传入的所有参数，而且，是通过参的顺序进行排列
+        // arguments.length  输入传入参数的个数
+        // 访问arguments的里面的数据，需要通过对应的房间号/下标进行访问
+        function sum() {
+            var sum = 0;
+            for (var i = 0; i < arguments.length; i++) { // 这里arguments.length=3，传了3个参数，
+                sum += arguments[i];
+            }
+            alert(sum);
+        }
+        sum(3, 4, 5)
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
