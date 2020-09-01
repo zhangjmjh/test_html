@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        // 函数的作用域，也就是有效范围，每一个函数都会形成一个新的作用域
+        var a = 10;
+
+        function sum() {
+            var a = 5;
+            alert(a); //5  第二步  然后调用sum函数，函数的内容是打印a，结果是a=5
+        }
+        alert(a); //10  第一步  执行最开始定义的变量 a=10
+        sum();
+        alert(a); //10  第三步 这里是调用完函数之后就释放了整个函数，重新打印a=10
+
+
+        // var a = 10;
+
+        // function sun() {
+        //     a = 5;
+        // }
+        // alert(a); // 第一步这里还是执行最开始定义的变量 a=10
+        // sum();
+        // alert(a); // 第二步  这里调用了sum函数，变量a被重新定义为5，最后重新打印a=5
+
+        // 全局作用域：全局变量   全局作用域申明的变量
+        // 局部作用域：局部变量   局部变量的生命周期和生效的范围，都是申明该变量的函数区域，当函数调用完成以后，就直接销毁
+        // 如果全局变量和局部变量重名，采取就近原则，当前访问的这个变量离哪个作用域近，就是哪个作用域
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

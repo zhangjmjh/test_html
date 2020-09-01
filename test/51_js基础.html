@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        window.onload = function() {
+            // 这里是获取函数的元素
+            var oBtn = document.getElementById("btn");
+            var oTxt = document.getElementById("txt");
+            // 给按钮添加事件驱动函数
+            oBtn.onclick = function() {
+                // 要将文本中的内容清空
+                // oTxt.value = "";
+
+                // 修改文本中的内容  oTxt.value  是字符串   如果要输入计算的话需要把他转换成数字类型才可以
+                oTxt.value = "修改后的内容"
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <input type="text" value="请输入您想要搜索的文字" id="txt" />
+    <input type="button" value="清空" id="btn" />
+</body>
+
+</html>
