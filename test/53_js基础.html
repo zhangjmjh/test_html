@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        // 数组的栈方法  特点：先进后出
+        // var arr = ["钢铁侠", "旅居热"];
+        // arr.push("蜘蛛侠"); //意思就是往数组里面添加一个元素，注意是在末尾插入一个元素
+        // alert(arr);
+
+        // arr.pop(); //移除数组末尾的一个元素
+        // alert(arr);
+
+        //队列
+
+        // arr.shift(); //队列的方法：移除数组的第一个元素
+        // alert(arr);
+
+        // arr.unshift("Hhahh", 1); //  在数组的开头加元素
+        // alert(arr);
+
+        // var arr1 = ["hhe", "iiiii"]
+        // var aa3 = arr.concat(arr1); //把2个数组合并在一起，生成一个新的数字，不会改变原来的数组
+        // alert(aa3);
+
+
+        // var arr = ["钢铁侠", "旅居热", "hhe", "ieoie"];
+        // var arr1 = arr.slice(1, 2) //不包含末尾的数字，末尾的数字不会打印出来，这里就是按序号截取指定的元素
+        // alert(arr1);
+
+        var arr = ["red", "blue", "green"];
+        var ret = arr.splice(1, 1); //这里是删除指定序号的元素，2表示删除几个元素
+        alert(ret); //blue
+        alert(arr); //删除blue之后的数组
+        // var ret = arr.splice(1, 0, "yellow", "xxxx"); //这里是按照序号位置插入指定的元素，0表示不用删除元素
+        // alert(arr); //这里返回的才是新的数组
+        // alert(ret); //这里之所以是返回空值，是因为没有截取返回值
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
