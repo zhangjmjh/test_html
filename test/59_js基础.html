@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        // filter过滤
+        // var ret = [10, 20, 30, 40, 50].filter(function(item, index, array) {
+        //     return item > 30; //找出所有大于30的元素
+        // })
+        // alert(ret);
+
+        var ret = [10, 20, 30, 40, 50];
+        // some 会去判断return后面的条件是否成立，成立返回true,不成立返回false,遍历数组
+        var res = ret.some(function(item, index, array) {
+            return item == 30;
+        })
+        alert(res)
+
+        // every  和  some一样，但是要求每一项都符合，才返回true，有一项不符合返回false
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

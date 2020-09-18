@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        // var a = 10;
+
+        // function show(a) {
+        //     a = 5;
+        //     alert(a);
+        // }
+        // alert(a); //10
+        // show(a);
+        // alert(a);
+
+        // var arr = [10, 20];
+
+        // function show(arr) {
+        //     arr.push(30, 40);
+        //     alert(arr);
+        // }
+        // alert(arr); //10,20
+        // show(arr); //10,20,30,40
+        // alert(arr); //10,20,30,40
+        // alert(arr.indexOf(30)); //  查找30所在的位置
+
+        var arr = [10, 20, 30];
+        arr.forEach(function(item, index, array) {
+                alert(item + "," + index + "," + array);
+            }) //10,0,10,20,30
+
+        // item  当前遍历到的元素
+        // index  当前遍历到的下标
+        // array  当前数组
+
+        // 数组 复合数据类型/引用数据类型 
+        // 所有的复合数据类型都不直接存储在我们的函数中，存储在堆段
+        // 函数运行的内存空间是预先分配好的，一旦被分配好内存空间，就不能进行改变
+        // 在堆段，我们可以想要使用内存，就随时分配多少内存
+        // 所有的符合数据类型，存储的都是门牌号，也就是地址，所以这类型的数据，叫做引用数据类型
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
