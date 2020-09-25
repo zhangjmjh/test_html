@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // open的三个参数
+        // 1、调换的url    打开一个新窗口
+        // 2、字符串       给当前打开的窗口起个名字，不会重新打开窗口 
+        // 3、一串特殊字符串  以下是打开一个特定窗口大小的
+        function btnClick() {
+            open('http://www.baidu.com', "xxx", "width=400,height=400,top=200,left=300");
+        }
+    </script>
+</head>
+
+<body>
+    <button onclick="btnClick();">打开窗口</button>
+</body>
+
+</html>

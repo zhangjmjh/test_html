@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function $(id) {
+            //这里是封装一个总的id函数，为的是每次可以去调用
+            return document.getElementById(id);
+        }
+        var timer = null; //记录定时器的返回值
+        var i = 0; //总秒数
+        var isRunning = false;
+        window.onload = function() {
+            //以下代码是在页面接加载完成之后才开始调用的
+            /* 获取按钮 */
+            function startFunc() {
+                timer = setInterval(function() {
+                    i++;
+                    $("sec").innerHTML = doubleNm(i % 60);
+                    $("min").innerHTML = doubleNm(parseInt(i / 60) % 60);
+                    $("hour").innerHTML = doubleNm(parseInt(i / 3600));
+                }, 1000);
+            }
+
+            /* 暂定 */
+            function pase() {
+                clearInterval(timer);
+            }
+
+            /* 给开始按钮添加点击事件 */
+            $("btn1").onclick = function() {
+                if (!isRunning) { //如果isRunning为false,把html标签变为暂停
+                    $("btn1").innerHTML = "暂停";
+                    isRunning = true;
+                    startFunc()
+                } else {
+                    $("btn1").innerHTML = "开始";
+                    isRunning = false;
+                    startFunc()
+                }
+            }
+
+            /* 复位 */
+            $("reset").onclick = function() {
+                clearInterval(timer);
+                i = 0;
+                isRunning = false;
+                $("btn1").innerHTML = "开始";
+                $("sec").innerHTML = "00";
+                $("min").innerHTML = "00";
+                $("hour").innerHTML = "00";
+            }
+
+        }
+
+        function doubleNm(n) {
+            if (n < 10) {
+                return "0" + n;
+            } else {
+                return n;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div id="div1">
+        <span id="hour">00</span>
+        <span>:</span>
+        <span id="min">00</span>
+        <span>:</span>
+        <span id="sec">00</span>
+        <br/>
+        <button id="btn1">开始</button>
+        <button id="reset">复位</button>
+    </div>
+</body>
+
+</html>
