@@ -8,14 +8,22 @@
     <script>
         // 一般情况下，将没有名字的函数叫做匿名函数
         var i = 0;
-        var show = function() {
+        // var show = function() {
+        //     if (i == 5) {
+        //         clearInterval(timer); //取消定时器
+        //     }
+        //     document.write(i++ + "<br/>");
+        // }
+        // var timer = setInterval(show, 1000);
+        // // setInterval 定时器 (函数、毫秒数) 每隔对应的毫秒数，执行一次传入的函数
+
+
+        var timer = setInterval(function() {
             if (i == 5) {
-                clearInterval(timer); //取消定时器
+                clearTimeout(timer);
             }
             document.write(i++ + "<br/>");
-        }
-        var timer = setInterval(show, 1000);
-        // setInterval 定时器
+        }, 1000);
     </script>
 </head>
 

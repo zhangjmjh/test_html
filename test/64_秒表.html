@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function $(id) {
+            //这里是封装一个总的id函数，为的是每次可以去调用
+            return document.getElementById(id);
+        }
+        var timer = null; //记录定时器的返回值
+        var i = 0; //总秒数
+        window.onload = function() {
+            //写在这里的代码，是整个页面加载完成周再去运行的(固定格式)
+            //接下来是给三个标签添加点击事件，添加点击事件的方法如下：
+            $("start").onclick = function() {
+                timer = setInterval(function() {
+                    i++;
+                    $("sec").innerHTML = doubleNm(i % 60);
+                    $("min").innerHTML = doubleNm(parseInt(i / 60) % 60);
+                    $("hour").innerHTML = doubleNm(parseInt(i / 3600));
+                }, 1000);
+            }
+            $("pause").onclick = function() {
+                //暂停
+                clearInterval(timer);
+            }
+            $("reset").onclick = function() {
+                clearInterval(timer);
+                $("sec").innerHTML = "00";
+                $("min").innerHTML = "00";
+                $("hour").innerHTML = "00";
+            }
+
+        }
+
+        function doubleNm(n) {
+            if (n < 10) {
+                return "0" + n;
+            } else {
+                return n;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div id="div1">
+        <span id="hour">00</span>
+        <span>:</span>
+        <span id="min">00</span>
+        <span>:</span>
+        <span id="sec">00</span>
+        <br/>
+        <button id="start">开始</button>
+        <button id="pause">暂停</button>
+        <button id="reset">复位</button>
+    </div>
+</body>
+
+</html>
