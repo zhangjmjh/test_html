@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 参数：字符串  CSS选择器格式字符串
+        // document.querSelector()
+        // 返回值：一个元素节点，找到符合条件的第一个元素节点
+
+        // document.querSelectorAll();
+        // 返回值：是一个伪数组
+        window.onload = function() {
+            //获取id=ol1
+            // var node = document.querySelector('#ol1');
+
+            //获取tagName=li
+            // var node = document.querySelector('li');
+
+            //获取class=box
+            // var node = document.querySelector('ol .box');
+
+            // node.style.backgroundColor = 'red'; //找出对应元素的节点后，将其背景色改为红色
+
+
+            // var nodes = document.querySelectorAll('#ul1');
+
+            // var nodes = document.querySelectorAll('ol li');
+
+            // var nodes = document.querySelectorAll('ol .box');
+
+            var nodes = document.querySelectorAll('ul [name=hello]');
+
+            alert(nodes.length);
+            for (var i = 0; i < nodes.length; i++) {
+                nodes[i].style.backgroundColor = 'red';
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <ul id='ul1'>
+        <li>111</li>
+        <li class='box'>l11</li>
+        <li class="box">l11</li>
+        <li name="hello">l11</li>
+        <div class="box" name='hello'>div</div>
+    </ul>
+    <input type="text" name="hello" />
+    <span name="hello"></span>
+    <ol id="ol1">
+        <li class='box'>l22</li>
+        <li class="box">l22</li>
+        <li>l22</li>
+    </ol>
+</body>
+
+</html>

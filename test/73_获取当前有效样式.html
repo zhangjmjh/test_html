@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1 {
+            background-color: blue
+        }
+        
+        .box {
+            height: 300px;
+            background-color: blue;
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            var oDiv = document.getElementById('div1');
+            alert(getStyle(oDiv, 'height'));
+        }
+
+        // 跨浏览器的兼容
+        //alert(oDiv.currentStyle['height']);   //IE兼容
+        //alert(getComputedStyle(oDiv)['height']);  //火狐 谷歌
+
+
+        function getStyle(node, cssStyle) {
+            //  ?  表示判断    ：  表示否则   三元运算符
+            return node.currentStyle ? nond.currentStyle[cssStyle] : getComputedStyle(node)[cssStyle];
+        }
+    </script>
+</head>
+
+<body>
+    <div id='div1' style='width:200px;background-color:red' class='box'></div>
+</body>
+
+</html>
