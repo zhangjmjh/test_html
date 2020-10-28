@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1 {
+            width: 400px;
+            height: 200px;
+            background-color: white;
+            border: 1px solid black;
+            margin: 100px auto;
+            text-align: center;
+            line-height: 200px;
+            font-size: 18px;
+        }
+    </style>
+    <script src='tool.js'></script>
+    <script>
+        // 写一个定时器，每隔一秒修改一次div的内容文本颜色和文字大小
+        // 最开始文字是默认大小，大小开始增大，当增大了6次之后
+        // 文字开始缩小，缩小6次，文字再开始增大
+        // 颜色随机
+        // rgba(255,255,255,0);
+        // 取rgba中0-255的随机数；Math.random() 表示随机取0-1之间的随机小数；paseInt 表示取整；这样就可以拥有一个0-255的随机数
+        // parseInt(Math.random()*256)
+
+        function randomColor() {
+            //str='rgba(255,255,255,1)'  这里是用到了字符串的拼接 中间用+号连起来
+            var str = 'rgba(' + parseInt(Math.random() * 256) + ',' + parseInt(Math.random() * 256) + ',' + parseInt(Math.random() * 256) + ',1)';
+            return str;
+        }
+        // alert(randomColor());
+
+        window.onload = function() {
+            var oDiv = document.getElementById('div1');
+            var speed = 5; //每一秒变化的大小
+            var count = 0;
+
+            //启动一个定时器；让她每隔1s执行一次，去修改当前div的颜色这个样式赋值给randomColor()这个函数
+            setInterval(function() {
+                //这里是重新赋值字体颜色给上面那个函数randomColor(),也就是rgba
+                oDiv.style.color = randomColor();
+
+                //1、将字体上一次的字体大小取出
+                var iCur = parseInt(getStyle(oDiv, 'fontSize'));
+                //2、变化字体大小，重新赋值回去
+                oDiv.style.fontSize = (iCur + speed + 'px');
+
+                count++
+                if (count % 6 == 0) {
+                    //这里是当count=6的时候，speed开始乘以一个负数开始变小，为了不让他一直变小下次到12的时候就开始负负得正开始变大，所以每次都是6
+                    //的整数倍的时候开始运行下一步
+                    speed *= -1
+                }
+
+            }, 1000)
+        }
+    </script>
+</head>
+
+<body>
+    <div id='div1'>div文本</div>
+</body>
+
+</html>

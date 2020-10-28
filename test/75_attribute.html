@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // setAttribute
+        // getAttributi
+        // removeAttribute()
+        window.onload = function() {
+            var oDiv = document.getElementById('div1');
+            // alert(oDiv.id);
+            // alert(oDiv.title);
+
+            /* alert(oDiv.getAttribute('id')); //获取元素属性的值
+            alert(oDiv.getAttribute('title')); */
+
+            /*  两者的区别：
+              1、 class的访问
+              2、 支持自定义属性
+              3、 删除 */
+
+            /* alert(oDiv.className); //可以访问
+            alert(oDiv.getAttribute('class')); //可以访问 */
+
+            /* alert(oDiv.xxx); //访问不到
+            alert(oDiv.getAttribute('xxx')); //能访问 */
+
+
+            //通过以下方式可以直接在行间距里面添加属性和自定义的属性
+            /* oDiv.setAttribute('class', 'box5');
+            oDiv.setAttribute('zzz', 'ooo');*/
+
+            oDiv.className = ''; //这种是假删除
+            oDiv.removeAttribute('title'); //这种是真删除
+
+        }
+    </script>
+</head>
+
+<body>
+    <div id='div1' title='hello' class='box' xxx='yyy'></div>
+</body>
+
+</html>

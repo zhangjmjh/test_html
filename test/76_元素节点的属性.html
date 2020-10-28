@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //innerHTML   获取标签间的内容 
+        //innerText   获取标签间的纯文本 不会解析标签，设置纯文本
+        //outeHTML    从外标签开始到外标签结束
+
+        window.onload = function() {
+            var oDiv = document.getElementById('div1');
+            //alert(oDiv.innerHTML);
+            //赋值，把整个div里面的元素属性重新替换成现在这个
+            /* oDiv.innerHTML = '<h1>hello world</h1>'; */
+
+            /* alert(oDiv.innerText);
+            oDiv.innerText = '<h1>hello world</h1>'; */
+
+            /* alert(oDiv.outerHTML);
+            oDiv.outerHTML = '<h1>hello world</h1>'; //这里会重新覆盖 */
+        }
+    </script>
+</head>
+
+<body>
+    <div id='div1'>div文本<em>em文本</em><strong>strong文本</strong></div>
+</body>
+
+</html>

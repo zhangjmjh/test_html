@@ -18,23 +18,32 @@
     <script>
         window.onload = function() {
             var oDiv = document.getElementById('div1');
-            alert(getStyle(oDiv, 'height'));
+            // alert(getStyle(oDiv, 'height'));
+
+
+            /* 设置样式 */
+            var oBtn = document.getElementById('btn1');
+            oBtn.onclick = function() {
+                oDiv.style.backgroundColor = 'orange';
+                oDiv.style.height = '500px';
+            }
         }
 
         // 跨浏览器的兼容
         //alert(oDiv.currentStyle['height']);   //IE兼容
-        //alert(getComputedStyle(oDiv)['height']);  //火狐 谷歌
+        //alert(getComputedStyle(oDiv)['height']);  //火狐 谷歌 
 
 
-        function getStyle(node, cssStyle) {
-            //  ?  表示判断    ：  表示否则   三元运算符
-            return node.currentStyle ? nond.currentStyle[cssStyle] : getComputedStyle(node)[cssStyle];
-        }
+        // function getStyle(node, cssStyle) {
+        //  ?  表示判断    ：  表示否则   三元运算符
+        // return node.currentStyle ? nond.currentStyle[cssStyle] : getComputedStyle(node)[cssStyle];
+        // }
     </script>
 </head>
 
 <body>
     <div id='div1' style='width:200px;background-color:red' class='box'></div>
+    <button id=btn1>设置样式</button>
 </body>
 
 </html>
