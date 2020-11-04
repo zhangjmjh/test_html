@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // document.write()
+        //     注：会覆盖页面上原有的内容
+        // createElement()  创建一个节点
+
+        // appendChild()   将创建的节点插入到父节点下的子节点
+
+        // createTextNode()    创建纯文本 
+
+        // insertBefore()  将第一个节点添加到
+        /* 格式： box1.parentNode.insertBefore(box2, box1);
+        功能： 将box2添加到box1的前面 */
+
+        //replaceChild()    
+        /* box1.parentNode.replaceChild(box2,box1);
+        功能：用box2节点将box1节点替换掉
+
+        cloneNode()    克隆
+        格式1：node.cloneNode()
+        格式2：node.cloneNode(true);  克隆节点本身和子节点
+
+        removeChild()  删除
+        格式：box.paerentNode.removeChild(box);
+        */
+
+        window.onload = function() {
+            var oBtn = document.getElementById("btn1");
+            var oDiv = document.getElementById("div1");
+
+            oBtn.onclick = function() {
+                // document.write("<h1>hell world</h1>")
+                // var oP = document.createElement("p");
+                // var oTxt = document.createTextNode("<h1>hello world</h1>")
+                // oP.appendChild(oTxt);
+                // oDiv.appendChild(oP); //在p标签中添加一个纯文本的标签
+
+                // 将oP节点插入到oDiv节点的前面
+                // document.body.insertBefore(oP, oDiv);
+
+                //将p节点替换为oDiv节点
+                // document.body.replaceChild(p, oDiv)
+
+                //将div节点复制
+                // var newNode = oDiv.cloneNode(true);
+                // document.body.appendChild(newNode);
+
+                //  这里要写删除节点的父节点才可以
+                document.body.removeChild(oDiv);
+
+
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div id="div1">
+        <em>em</em> div文本
+        <strong>strong</strong>
+    </div>
+    <button id="btn1">节点操作</button>
+</body>
+
+</html>
