@@ -39,8 +39,50 @@
             /* 增加一个下边框 虚线 灰色 */
             padding: 2px;
             /* 上下左右4个方向的边距都是2px */
+            position: relative;
+        }
+        
+        #div2 div button {
+            position: absolute;
+            right: 0px;
         }
     </style>
+    <script src="tool.js"></script>
+    <script>
+        window.onload = function() {
+            var oDiv1 = document.getElementById("div1");
+            var oDiv2 = document.getElementById("div2");
+            var oInput = document.getElementById('input1');
+
+            //获取div1下面所有的buton
+            var aBtns = oDiv1.getElementsByTagName("button");
+            aBtns[0].onclick = function() {
+                if (!oInput.value) {
+                    alert("输入内容不能为空");
+                } else {
+                    //获取到输入框的内容，创建节点添加到页面上
+                    var newDiv = document.createElement("div");
+                    var oText = document.createTextNode(oInput.value);
+                    newDiv.appendChild(oText);
+                    newDiv.style.backgroundColor = getRandomColor();
+
+                    oDiv2.appendChild(newDiv);
+                    oInput.value = "";
+                }
+            }
+            aBtns[1].onclick = function() {
+                //删除最后i一个节点
+                oDiv2.removeChild(oDiv2.lastChild);
+            }
+
+            aBtns[2].onclick = function() {
+                //拷贝最后一节节点，再添加到页面上
+                var newNode = oDiv2.lastChild.cloneNode(true);
+                oDiv2.appendChild(newNode);
+            }
+
+        }
+    </script>
 </head>
 
 <body>
@@ -51,9 +93,9 @@
         <button>拷贝</button>
     </div>
     <div id="div2">
+        <!-- <div>xxx <button>x</button></div>
         <div>xxx <button>x</button></div>
-        <div>xxx <button>x</button></div>
-        <div>xxx <button>x</button></div>
+        <div>xxx <button>x</button></div> -->
     </div>
 </body>
 
