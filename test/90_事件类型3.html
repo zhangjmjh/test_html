@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 300px;
+            height: 300px;
+            background-color: gray;
+            line-height: 100px;
+            /* 文本居中 */
+            text-align: center;
+            margin: 20px;
+            padding: 50px;
+        }
+        
+        div span {
+            width: 100px;
+            height: 100px;
+            background-color: white;
+            /* 在同一行 有行、块级元素特性 有自己的特性*/
+            display: inline-block;
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            var aDivs = document.getElementsByTagName("div");
+
+            var i = 0;
+            aDivs[0].onmouseover = function() {
+                    /* 绑定mouseover的事件 当鼠标移入的时候 设定一个i的下标 让他去改变他的span和html*/
+                    var oSpan = this.getElementsByTagName("span")[0];
+                    oSpan.innerHTML = i++;
+                }
+                /* 经过子节点会重复触发   mouseover   mouseout */
+                /* 经过子节点不会重复触发  mouseenter   mouseleave */
+            var j = 0;
+            aDivs[1].onmouseenter = function() {
+                var oSpan = this.getElementsByTagName("span")[0];
+                oSpan.innerHTML = j++;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div>
+        <span>mouseover</span>
+    </div>
+    <div>
+        <span>mouseenter</span>
+    </div>
+</body>
+
+</html>

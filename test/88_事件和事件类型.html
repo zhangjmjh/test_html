@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //  内联模式   
+        //  外联模式/脚本模式
+        function btnClick() {
+            alert("内联模式")
+        }
+
+        window.onload = function() {
+            var oBtn = document.getElementById("btn1");
+            oBtn.onclick = function() {
+                alert("外联模式")
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <button onclick="btnClick();">内联模式</button>
+    <button id="btn1">外联模式</button>
+</body>
+
+</html>

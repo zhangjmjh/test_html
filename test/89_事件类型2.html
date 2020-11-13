@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 事件类型的种类：
+        // 鼠标事件：可以绑定哎任意的元素节点上
+        //   click 单击
+        //   dblclick 双击
+        //   mouseover 鼠标移入
+        //   mouseout 鼠标移出
+        //   mousemove 鼠标移动（会不停的触发）
+        //   mousedown  鼠标按下
+        //   mouseup    鼠标抬起
+        //   mouseenter 鼠标移入
+        //   mouseleave 鼠标移出
+        // 键盘事件：
+        // HTML事件：
+        //   window事件
+        //   表单事件
+        window.onload = function() {
+            var oBtn = document.getElementById("btn1");
+            /* oBtn.ondblclick = function() {
+                alert("双击");
+            } */
+
+            //  移入移出操作
+            // oBtn.onmouseover = function() {
+            //     this.style.backgroundColor = "red";
+            // }
+            // oBtn.onmouseout = function() {
+            //     this.style.backgroundColor = "blue";
+            // }
+
+            // 按下 抬起操作
+            oBtn.onmousedown = function() {
+                this.innerHTML = "按下";
+            }
+            oBtn.onmouseup = function() {
+                this.innerHTML = "抬起";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <button id="btn1">按钮</button>
+</body>
+
+</html>
