@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--HTML事件：
+            window事件
+            load    当页面加载完成以后会触发
+            unload  当页面解构的时候触发（刷新页面，关闭当前页面）
+            scroll  页面滚动
+            resize  窗口大小发生变化的时候触发
+            表单事件-->
+    <script>
+        /* load */
+        // window.onload = function() {
+        //     alert(2);
+        // }
+
+        /* 滚动 scroll   resize */
+        var i = 0;
+        window.onresize = function() {
+            document.title = i++;
+        }
+    </script>
+</head>
+
+<body style="height:3000px">
+    <h1>hello world</h1>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 表单事件 -->
+    <!--  blur 失去焦点 
+          focus 获取焦点
+          select 选中文本
+          change 对文本进行修改并且失去焦点-->
+
+    <script>
+        window.onload = function() {
+            var oInput = document.getElementById('input1');
+            oInput.onblur = function() {
+                this.value = "失去焦点";
+            }
+
+            oInput.onfocus = function() {
+                this.value = "获取焦点";
+            }
+
+            oInput.onselect = function() {
+                alert("被选中了");
+            }
+        }
+    </script>
+</head>
+
+<body style="height: 3000px;">
+    <input value="默认文本" id="input1" type="text" />
+</body>
+
+</html>

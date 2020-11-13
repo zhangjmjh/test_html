@@ -11,7 +11,18 @@
     <!-- ketpress   键盘按下  只支持字符键 -->
     <script>
         window.onload = function() {
+            // var i = 0;
+            // window.onkeydown = function() {
+            //     document.title = i++;
+            // }
 
+            window.onkeypress = function() {
+                document.title = i++;
+            }
+
+            window.onkeyup = function() {
+                document.title = "抬起";
+            }
         }
     </script>
 </head>
