@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 创建10w个节点，添加到页面上 */
+        window.onload = function() {
+            console.time("test1");
+            //test1: 4.60595703125 ms
+
+            for (var i = 0; i < 1000; i++) {
+                var newDiv = document.createElement("div")
+                document.body.appendChild(newDiv);
+            }
+            console.timeEnd("test1");
+
+            /* 先创建好10W个节点，将10W节点插入到一个节点上，最后将这1个节点添加到页面上 */
+            console.time("test2");
+            //test2: 3.249755859375 ms
+            var node = document.createElement('div');
+            for (var i = 0; i < 1000; i++) {
+                var newDiv = document.createElement("div");
+                node.appendChild(newDiv);
+
+            }
+            document.body.appendChild(node);
+            console.timeEnd("test2");
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

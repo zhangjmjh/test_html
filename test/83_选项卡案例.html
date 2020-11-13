@@ -24,16 +24,56 @@
             height: 300px;
             border: 1px solid black;
             display: none;
+            /* 将元素的显示设为无，即在网页中不占任何的位置 这里因为python和java下面的内容
+            是看不到的，所以这里用display:none*/
         }
     </style>
+    <script>
+        window.onload = function() {
+            var oDiv1 = document.getElementById("div1");
+            // 拿到整个div1的标签
+            var aBtns = oDiv1.getElementsByTagName("button");
+            // 拿到div1标签下的 button标签
+            var aDivs = oDiv1.getElementsByTagName("div");
+            //拿到div1标签下的div标签
+
+            //给每一个按钮添加点击
+            for (var i = 0; i < aBtns.length; i++) {
+                //找到当前按钮的下标
+                aBtns[i].index = i;
+
+                aBtns[i].onclick = function() {
+                    //取消所有按钮的样式
+                    for (var j = 0; j < aBtns.length; j++) {
+                        //这里是找到对应点击的下标
+                        // alert(this.index);
+
+                        /* 将遍历到的每个div,每次循环时将之前的css样式都改为空 */
+                        aBtns[j].className = "";
+
+                        /* 将遍历到的每个div,每次循环时将之前的div样式都改为none */
+                        aDivs[j].style.display = "none";
+                    }
+
+                    /* 将当前按钮的下标 取出对应下标的div*/
+                    aDivs[this.index].style.display = "block"
+
+                    //当点击按钮之后会执行下面的函数：也就是当前的this将他的css属性改为active
+                    this.className = 'active';
+                }
+            }
+        }
+    </script>
 
 </head>
 
 <body>
     <div id="div1">
+        <!-- 这里button对应的是div  编号分别是0  1   2 所以前面先找到对应点击按钮的下标 -->
         <button class="active">HTML5</button>
         <button>Python</button>
         <button>Python</button>
+        <!-- 这里因为不能全部隐藏该div，第一个必须要显示出来，所以这里恢复该标签 -->
         <div style="display: block">HTML5是最好的语言</div>
         <div>python是最好的语言</div>
         <div>java是最好的语言</div>
