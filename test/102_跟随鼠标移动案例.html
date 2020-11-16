@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+        
+        #dic1 {
+            widows: 208px;
+            height: 208px;
+            /* 背景图像将仅显示一次 */
+            background: url(dong.gif) no-repeat;
+            position: absolute;
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            var oDiv = document.getElementById("div1");
+            document.onmousemove = function(ev) {
+                var e = ev || window.event;
+                oDiv.style.left = e.clientX + "px";
+                oDiv.style.top = e.clientY + "px";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div id="div1"></div>
+</body>
+
+</html>

@@ -9,28 +9,48 @@
     <!--  blur 失去焦点 
           focus 获取焦点
           select 选中文本
-          change 对文本进行修改并且失去焦点-->
+          change 对文本进行修改并且失去焦点
+          必须添加到form元素上
+          submit 当我们点击subimit 上的按钮才能触发
+          reset  当我们点击reset上的按钮才能触发-->
 
     <script>
         window.onload = function() {
             var oInput = document.getElementById('input1');
-            oInput.onblur = function() {
-                this.value = "失去焦点";
-            }
+            // oInput.onblur = function() {
+            //     this.value = "失去焦点";
+            // }
 
-            oInput.onfocus = function() {
-                this.value = "获取焦点";
-            }
+            // oInput.onfocus = function() {
+            //     this.value = "获取焦点";
+            // }
 
-            oInput.onselect = function() {
-                alert("被选中了");
+            // oInput.onselect = function() {
+            //     alert("被选中了");
+            // }
+
+            /* oInput.onchange = function() {
+                alert("被修改了");
+            } */
+
+            var oF1 = document.getElementById("f1");
+            oF1.onsubmit = function() {
+                alert("提交");
+            }
+            oF1.onreset = function() {
+                alert("提交");
             }
         }
     </script>
 </head>
 
 <body style="height: 3000px;">
-    <input value="默认文本" id="input1" type="text" />
+    <!--  <input value="默认文本" id="input1" type="text" /> -->
+    <form id="f1">
+        <input type="text" />
+        <input type="submit" />
+        <input type="reset" />
+    </form>
 </body>
 
 </html>

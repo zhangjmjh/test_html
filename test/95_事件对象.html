@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function() {
+            var oBtn = document.getElementById("btn1");
+            oBtn.onclick = function(ev) {
+                //事件对象获取 这样写是为了兼容ie8以下的浏览器 这是一个或运算表达式
+                // 在ie8以上 直接将ev 赋值给e  在ie8以下 等式不成立 
+                // 通过形参拿到事件对象的方式
+                // window.event 去拿到事件对象
+                var e = ev || window.event;
+                alert(e);
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <button id="btn1">按钮</button>
+</body>
+
+</html>
