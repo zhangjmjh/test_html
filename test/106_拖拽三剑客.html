@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1 {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+        }
+    </style>
+    <script>
+        // 拖拽  三剑客
+        // mousedown  记录鼠标按下位置和被拖拽物体相对距离
+        // var offsetX=e.clentX-node.offsetLeft; 鼠标距离屏幕的距离-鼠标距离元素的距离
+        // var offsetY=e.clientY-node.offsetTop;
+        // mousemove   一致保持  相对距离  屏幕距离-鼠标到元素框的距离
+        // node.style.left =e.clentX -offsetX+"px";
+        // nnde.style.top = e.clientY-offsetY +"px";
+        // mouseup  取消拖拽
+
+        window.onload = function() {
+            var oDiv = document.getElementById("div1");
+            oDiv.onmousedown = function(ev) {
+                    var e = ev || window.event;
+                    /* 记录鼠标和被拖拽物体相对位置：
+                    水平方向的相对距离 = 当前鼠标的位置 - 当前被拖拽的物体距左的距离
+                    垂直方向的相对距离 = 当前鼠标的位置 - 当前被拖拽的物体距上的距离*/
+
+                    var offsetX = e.clientX - oDiv.offsetLeft;
+                    var offsetY = e.clientY - oDiv.offsetTop;
+
+                    document.onmousemove = function(ev) {
+                        var e = ev || Window.event;
+                        /* 当鼠标移动时，当前被拖拽物体的div的left值和top值
+                        当前鼠标位置 - 当时的相对位置*/
+                        oDiv.style.left = e.clientX - offsetX + "px";
+                        oDiv.style.top = e.clientY - offsetY + "px";
+                    }
+                }
+                // 取消拖拽
+            document.onmouseup = function() {
+                document.onmousemove = null;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div id="div1"></div>
+</body>
+
+</html>

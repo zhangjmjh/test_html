@@ -26,3 +26,76 @@ function getRandomColor() {
         return getRandomColor();
     }
 }
+
+//限制拖拽 限制了出边框
+function limitDrag(node) {
+    node.onmousedown = function(ev) {
+
+            var e = ev || window.event;
+            /* 记录鼠标和被拖拽物体相对位置：
+            水平方向的相对距离 = 当前鼠标的位置 - 当前被拖拽的物体距左的距离
+            垂直方向的相对距离 = 当前鼠标的位置 - 当前被拖拽的物体距上的距离*/
+
+            var offsetX = e.clientX - node.offsetLeft;
+            var offsetY = e.clientY - node.offsetTop;
+
+            document.onmousemove = function(ev) {
+                var e = ev || Window.event;
+                var l = e.clientX - offsetX;
+                var t = e.clientY - offsetY;
+
+                // 限制出界
+                if (l <= 0) {
+                    l = 0;
+                }
+                var windowWidth = document.documentElement.clientWidth || document.body.clientWidth;
+                if (l >= windowWidth - node.offsetWidth) {
+                    l = windowWidth - node.offsetWidth;
+                }
+
+                if (t <= 0) {
+                    t = 0;
+                }
+                var windowHeight = document.documentElement.clientHeight || document.body.clientHeight;
+                if (t >= windowHeight - node.offsetHeight) {
+                    t = windowHeight - node.offsetHeight;
+                }
+
+
+                /* 当鼠标移动时，当前被拖拽物体的div的left值和top值
+                当前鼠标位置 - 当时的相对位置*/
+                node.style.left = l + "px";
+                node.style.top = t + "px";
+            }
+        }
+        // 取消拖拽
+    document.onmouseup = function() {
+        document.onmousemove = null;
+    }
+
+}
+
+
+
+//  限制拖拽 没有限制是否出边框
+function drag(node) {
+    node.onmousedown = function(ev) {
+            var e = ev || window.event;
+            /* 记录鼠标和被拖拽物体相对位置：
+            水平方向的相对距离 = 当前鼠标的位置 - 当前被拖拽的物体距左的距离
+            垂直方向的相对距离 = 当前鼠标的位置 - 当前被拖拽的物体距上的距离*/
+
+            var offsetX = e.clientX - node.offsetLeft;
+            var offsetY = e.clientY - node.offsetTop;
+
+            document.onmousemove = function(ev) {
+                var e = ev || Window.event;
+                node.style.left = e.clientX - offsetX + "px";
+                node.style.top = e.clientY - offsetY + "px";
+            }
+        }
+        // 取消拖拽
+    document.onmouseup = function() {
+        document.onmousemove = null;
+    }
+}

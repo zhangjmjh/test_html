@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function() {
+            document.onclick = function() {
+                //输出当前窗口的宽  固定写法
+                /* var windowWidth = document.documentElement.clientWidth || document.body.clientWidth
+                alert(windowWidth); */
+
+                //输出当前窗口的高
+                var windowHeight = document.documentElement.clientHeight || document.body.clientHeight
+                alert(windowHeight);
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

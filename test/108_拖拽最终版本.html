@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1 {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+        }
+        
+        #div2 {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            position: absolute;
+            left: 400px;
+        }
+    </style>
+    <script src="tool.js"></script>
+    <script>
+        window.onload = function() {
+            var oDiv1 = document.getElementById("div1");
+            var oDiv2 = document.getElementById("div2");
+            limitDrag(oDiv1);
+            drag(oDiv2);
+        }
+    </script>
+</head>
+
+<body>
+    <div id="div1"></div>
+    <div id="div2"></div>
+</body>
+
+</html>

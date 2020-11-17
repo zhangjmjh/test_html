@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0px;
+        padding: 0px
+    }
+    
+    #menu {
+        width: 100px;
+        height: 100px;
+        background-color: gray;
+        display: none;
+        position: absolute;
+    }
+</style>
+<script>
+    window.onload = function() {
+        //  这里阻止了官方的右键菜单
+        document.oncontextmenu = function() {
+            return false;
+        }
+
+        // 实现自定义的右键菜单 鼠标按下
+        // 按下的是右键 在右键这个位置显示菜单
+        // 如果按下的是别的键 菜单消失
+
+        var oMenu = document.getElementById("menu");
+
+        //给当前的oMent赋值并添加一个点击按下的事件
+        document.onmousedown = function(ev) {
+            var e = ev || window.event;
+            if (e.button == 2) {
+                oMenu.style.display = "block";
+                //点击位置距离当前body可视区域的x，y坐标
+                oMenu.style.left = e.clientX + 50 + 'px';
+                oMenu.style.top = e.clientY + 50 + 'px';
+            } else {
+                oMenu.style.display = "none";
+            }
+        }
+
+    }
+</script>
+
+<body>
+    <div id="menu">
+        <ul>
+            <li>菜单1</li>
+            <li>菜单2</li>
+            <li>菜单3</li>
+        </ul>
+    </div>
+</body>
+
+</html>
