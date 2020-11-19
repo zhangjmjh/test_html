@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #small {
+            width: 400px;
+            height: 560px;
+            position: absolute;
+            /* 绝对定位 */
+            left: 50px;
+            top: 50px;
+        }
+        
+        #small img {
+            width: 150%;
+            height: 100%;
+        }
+        
+        #mark {
+            width: 100px;
+            height: 100px;
+            background-color: white;
+            /* 透明度 */
+            opacity: 0.5;
+            /* 下面是IE专用属性 */
+            filter: alpha(opacity=50);
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            display: none;
+        }
+        
+        #big {
+            width: 400px;
+            height: 400px;
+            border: 1px solid black;
+            left: 800px;
+            top: 100px;
+            position: absolute;
+            /* 当内容溢出元素框时发生的事情 内容会被修剪，并且其余内容是不可见的 */
+            overflow: hidden;
+            display: none;
+        }
+        
+        #big img {
+            width: 1200px;
+            height: 1120px;
+            position: absolute;
+            left: 0px;
+            top: 0px;
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            var oSmall = document.getElementById("small"); // 拿小div
+            var oBig = document.getElementById("big"); //  拿大div
+            var oMark = document.getElementById("mark"); //拿遮罩层
+            var oBigimg = oBig.getElementsByTagName("img")[0]; //拿大图
+
+
+            // 给小div添加鼠标移入和移出事件
+            oSmall.onmouseover = function() {
+                oMark.style.display = "block"; //鼠标移入显示遮罩层
+                oBig.style.display = "block";
+            }
+            oSmall.onmouseout = function() {
+                    oMark.style.display = "none"; //鼠标移出不显示遮罩层
+                    oBig.style.display = "none";
+                }
+                //控制遮罩层随鼠标移动
+            oSmall.onmousemove = function(ev) {
+                var e = ev || window.event;
+
+                var l = e.clientX - oSmall.offsetLeft - 50; //当前遮罩层
+                //遮罩层左边界最小距离不能小于等于0；最大距离=图片的宽-遮罩层的宽
+                if (l <= 0) {
+                    l = 0;
+                }
+                if (l >= 500) {
+                    l = 500
+                }
+
+                var t = e.clientY - oSmall.offsetTop - 50; //当前遮罩层
+                //遮罩层上边界最小距离不能小于等于0；最大距离=图片的高-遮罩层的高 
+                if (t <= 0) {
+                    t = 0;
+                }
+                if (t >= 460) {
+                    t = 460;
+                }
+                oMark.style.left = l + "px"; //遮罩层左边界的距离=鼠标距左的距离-小div的边界距左的距离
+                oMark.style.top = t + "px"; //遮罩层右边界的距离=鼠标距上的距离-小div的边界距上的距离
+
+                /* 右边图片的移动方式，左边的遮罩层如何移动，右边图片，反方向对应倍数移动 */
+
+                /* 大图的left样式等于遮罩层上的图片放大2倍 */
+                oBigimg.style.left = l * -2 + "px";
+                oBigimg.style.top = t * -2 + "px";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div id="small">
+        <img src="../img/test.jpg" alt="" />;
+        <div id="mark"></div>
+    </div>
+    <div id="big">
+        <img src="../img/test.jpg" alt="" />;
+    </div>
+</body>
+
+</html>

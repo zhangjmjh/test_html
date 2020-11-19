@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #t1 tr td {
+            width: 100px;
+            height: 30px;
+        }
+        
+        .box0 {
+            background-color: red;
+        }
+        
+        .box1 {
+            background-color: blue;
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            var oRow = document.getElementById("row");
+            var oCol = document.getElementById("col");
+            var oBtn = document.getElementById("btn1");
+            var oT1 = document.getElementById("t1");
+
+            //给表格上的删除按钮添加事件委托 找到他的父节点T1添加点击
+            oT1.onclick = function(ev) {
+                var e = ev || window.event;
+                var target = e.target || window.event.srcElement;
+                //这里判断当前点击的 nodeName 属性指定节点的节点名称是不是button 如果是
+                //toLowerCase 转全小写 是为了容错
+                if (target.nodeName.toLowerCase() == 'button') {
+                    //parentNode：顾名思义-父节点 这里是删除oT1的祖宗元素也就是table
+                    oT1.removeChild(target.parentNode.parentNode)
+                }
+            }
+
+            oBtn.onclick = function() {
+                if (!oRow.value || !oCol.value) {
+                    alert("请输入对应的行列，生成表格");
+                } else {
+                    for (var i = 0; i < oRow.value; i++) {
+                        var oTr = document.createElement("tr");
+                        /* className 属性设置或返回元素的 class 属性
+                        通过box0或者1 来控制oTr的CSS样式 */
+                        oTr.className = "box" + (i % 2);
+
+                        for (var j = 0; j < oCol.value; j++) {
+                            var oTd = document.createElement("td");
+                            oTr.appendChild(oTd);
+                            //oTd.appendChild(oTr); 为什么不能把行添加到列？
+                        }
+                        //添加一个删除按钮 创建一个新的列
+                        var oClose = document.createElement("td");
+                        oClose.innerHTML = "<button>删除</button>";
+                        oTr.appendChild(oClose);
+                        oT1.appendChild(oTr);
+                    }
+
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <!-- placeholder 规定用于验证输入字段的模式   tr 表示行 td表示列-->
+    <input type="text" placeholder="行" id="row" />
+    <input type="text" placeholder="列" id="col" />
+    <button id="btn1">生成</button>
+    <table id="t1" border="1">
+    </table>
+</body>
+
+</html>

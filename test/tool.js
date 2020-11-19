@@ -99,3 +99,20 @@ function drag(node) {
         document.onmousemove = null;
     }
 }
+
+//  事件监听器的兼容
+function addEvent(node, evenType, funcName) {
+    if (node.addventListener) {
+        node.addEventListener(evenType, funcName, false);
+    } else {
+        node.attachEvent("on" + evenType, funcName);
+    }
+}
+
+function removeEvent(node, evenType, funcName) {
+    if (node.removeEventListener) {
+        node.removeEventListener(evenType, funcName);
+    } else {
+        node.detachEvent("on" + evenType, funcName);
+    }
+}

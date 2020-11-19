@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 事件委托的实现方法：*/
+        //1、找到当前节点的父节点
+        //2、将事件添加到这个父节点上
+        //3、找到触发对象，判断触发对象是否是想要的触发对象，进行后续的操作
+        //获取事件对象通过.target来获取
+        //window.event.srcElement  这是兼容低版本的写法
+
+
+        window.onload = function() {
+            /*nodeName 属性是根据节点的类型返回其名称 alert(target.nodeName);
+              toLowerCase转换成小写  如果获取的属性节点属于li 那么就改变其背景颜色*/
+            var oUl = document.getElementById("ul1");
+            oUl.onclick = function(ev) {
+                var e = ev || window.event;
+                var target = e.target || window.event.srcElement;
+                // alert(target.nodeName);
+                if (target.nodeName.toLowerCase() == "li") {
+                    target.style.backgroundColor = "red";
+                }
+            }
+
+            /* 点击创建节点事件*/
+            var obtn = document.getElementById("btn1");
+            var i = 6;
+            obtn.onclick = function() {
+                var newNode = document.createElement("li");
+                newNode.innerHTML = i++ * 1111;
+                oUl.appendChild(newNode);
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <button id="btn1">新增节点</button>
+    <ul id="ul1">
+        <li>1111</li>
+        <li>2222</li>
+        <li>3333</li>
+        <li>4444</li>
+        <li>5555</li>
+    </ul>
+</body>
+
+</html>
