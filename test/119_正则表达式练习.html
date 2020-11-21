@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 替代字符 | */
+        /*  var str = "goolee";
+         var box = /google|baidu|bing/; //只要其中有一个都行 */
+
+        /* 修饰符
+        i 忽略大小写
+        g 全局匹配
+        m 换行匹配  如果在字符串，遇到换行，重新开始计算行首*/
+        var str = "1、ba13idu\n2、go33ogle\n3、b12ing";
+        var box = /^\d/gm;
+        alert(str.replace(box, "*"));
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
